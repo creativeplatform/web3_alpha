@@ -5,10 +5,10 @@ type AppContextInterface = {
   setMember: (value: boolean) => void;
 };
 
-const AppContext = createContext<AppContextInterface>(null);
+const AppContext = createContext<AppContextInterface>({} as AppContextInterface);
 
 export function AppWrapper({ children }) {
-  const { isMember, setMember } = useAppContext()!;
+  const [isMember, setMember] = React.useState(false);
 
   return (
     <AppContext.Provider value={{ isMember, setMember }}>
