@@ -22,7 +22,7 @@ export default function Offline() {
           <Typography variant="h6">
             Stream is still offline
           </Typography>
-          <Link href={{pathname: "/member"}}>Back to videos</Link>
+          <Link href={{pathname: "/fan"}}>Back to videos</Link>
       </Container>
     </div>
   );

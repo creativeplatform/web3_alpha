@@ -13,11 +13,11 @@ import styles from "../../components/layout.module.css";
 import Router from "next/router";
 import { useAppContext } from "../../utils/context";
 
-function Member({ streams, isLoading }) {
-  const {isMember, setMember} = useAppContext();
+function Fan({ streams, isLoading }) {
+  const {isFan, setFan} = useAppContext();
 
   useEffect(() => {
-    if (!isMember) {
+    if (!isFan) {
       Router.push("/");
     }
   });
@@ -33,7 +33,7 @@ function Member({ streams, isLoading }) {
 
   const logout = () => {
     localStorage.clear();
-    setMember(false);
+    setFan(false);
     Router.push("/");
   };
 
@@ -63,12 +63,12 @@ function Member({ streams, isLoading }) {
                   href={
                     stream.isActive
                       ? {
-                          pathname: "/member/[id]",
+                          pathname: "/fan/[id]",
                           query: {
                             id: stream.id,
                           },
                         }
-                      : { pathname: "/member/offline" }
+                      : { pathname: "/fan/offline" }
                   }
                 >
                   <div>
@@ -104,4 +104,4 @@ export async function getServerSideProps() {
   return { props: { streams: res.data, isLoading: false } };
 }
 
-export default Member;
+export default Fan;

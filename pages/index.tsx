@@ -9,11 +9,11 @@ import Link from "next/link";
 import { useAppContext } from "../utils/context";
 
 export default function Home() {
-  const {isMember, setMember} = useAppContext();
+  const {isFan, setFan} = useAppContext();
 
   useEffect(() => {
     window.addEventListener("unlockProtocol.status", function (event: any) {
-      setMember(event.detail.state == "unlocked");
+      setFan(event.detail.state == "unlocked");
     });
   });
 
@@ -42,9 +42,9 @@ export default function Home() {
         <script dangerouslySetInnerHTML={unlockConfigTag} />
       </Head>
       <section className={utilStyles.headingMd}>
-        {!isMember ? (
+        {!isFan ? (
           <div>
-            <p>Members only premium entertainment 🔒</p>
+            <p>Fans only premium entertainment 🔒</p>
             <Button
               variant="contained"
               color="primary"
@@ -56,7 +56,7 @@ export default function Home() {
         ) : (
           <div>
             <p>Welcome 🎉</p>
-            <Link href="/member">
+            <Link href="/fan">
               <Button color="primary">Review the secret!</Button>
             </Link>
           </div>

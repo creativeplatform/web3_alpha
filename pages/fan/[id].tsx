@@ -14,7 +14,7 @@ import Router from "next/router";
 import { useAppContext } from "../../utils/context";
 
 function App({ playbackId, title, author }) {
-  const {isMember} = useAppContext();
+  const {isFan} = useAppContext();
   const [videoEl, setVideoEl] = React.useState(null);
 
   const onVideo = React.useCallback((el) => {
@@ -22,7 +22,7 @@ function App({ playbackId, title, author }) {
   }, []);
 
   React.useEffect(() => {
-    if(!isMember){
+    if(!isFan){
       Router.push('/')
     }
 
