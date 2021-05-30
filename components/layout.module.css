@@ -1,0 +1,77 @@
+
+
+.container {
+  padding: 3rem 6rem;
+  background: linear-gradient(270deg, #d58e18, #dbc02d, #b7c82e, #f75ebb);
+  background-size: 800% 800%;
+
+
+  -webkit-animation: homeBackground 30s ease infinite;
+  -moz-animation: homeBackground 30s ease infinite;
+  animation: homeBackground 30s ease infinite;
+}
+
+
+@-webkit-keyframes homeBackground {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes homeBackground {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes homeBackground {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
+
+.gridContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.videoContainer {
+  padding-top: 16px;
+}
+
+.streamActive {
+  padding: 8px 8px;
+  border-radius: 4px;
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.streamInactive{
+  padding: 8px 8px;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.title {
+  flex-grow: 1;
+}
